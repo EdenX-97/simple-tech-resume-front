@@ -1,113 +1,176 @@
-import Image from "next/image";
+'use client'
+import Image from 'next/image';
+import Typewriter from 'typewriter-effect';
+import PersonIcon from '@mui/icons-material/Person';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import Footbar from './components/footbar';
+import Link from 'next/link';
 
 export default function Home() {
+  let titleList: string[] = [
+    "Software Engineer",
+    "Front-End Developer",
+    "Back-End Developer",
+    "Full-Stack Developer",
+    "Data Analyst",
+    "DevOps Engineer",
+    "iOS Developer",
+    "Android Developer",
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="text-center">
+      <div className="bg-base-200 w-full flex flex-col items-center">
+        <div className="w-[60vw] items-left">
+          <div className="mt-[2vh]">
+            <div className="badge badge-secondary">Powered by GPT AI</div>
+            <h1 className="text-5xl font-bold mt-[1vh]">
+              The Simplest Way to Generate Your
+            </h1>
+            <h1 className="text-5xl font-bold mt-[1vh]">
+              <span className="inline-block text-blue-500">
+                <Typewriter
+                  options={{
+                    strings: titleList,
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </span>
+              Resume
+            </h1>
+
+            <p className="text-lg mt-[2vh]">Let AI Speed Up Your Resume and Cover Letter Creation.</p>
+            <p className="text-lg">Customized for Each Company and Position.</p>
+          </div>
+
+          <div className="mt-[2vh]">
+            <button className="btn btn-primary text-lg"><Link href="/profile">Try Now <span className="badge badge-lg ml-1">FREE</span></Link></button>
+          </div>
+
+          <div className="flex mt-[4vh] mb-[2vh] text-left">
+            <Image src="/template.png" alt="template-image" width={400} height={400} />
+            <div className="ml-[6vh] mt-[2vh] w-full">
+              <div className="badge badge-primary">Core Features</div>
+              <h2 className="text-2xl font-bold">Easily generate your perfect tech resume</h2>
+              <div className="grid grid-cols-2 gap-4 mt-[2vh]">
+                <div className="mt-[1vh]">
+                  <p className="text-lg font-bold"><PersonIcon /> One-Stop Profile Setup</p>
+                  <p className="text-base">Forget the resume redo hassle! Fill in your profile once and auto-generate resumes for any job.</p>
+                </div>
+                <div className="mt-[1vh]">
+                  <p className="text-lg font-bold"><TerminalIcon /> Tech Position Optimization</p>
+                  <p className="text-base">Efficiently generate perfect resume for software development, data analysis, or any title.</p>
+                </div>
+                <div className="mt-[1vh]">
+                  <p className="text-lg font-bold"><AutoGraphIcon /> AI-Powered Resume Creation</p>
+                  <p className="text-base">AI generates compelling resume content from your career history and work experience.</p>
+                </div>
+                <div className="mt-[1vh]">
+                  <p className="text-lg font-bold"><QuestionAnswerIcon /> Interview Yourself</p>
+                  <p className="text-base">Test your resume with interview questions and get AI-generated answers.</p>
+                </div>
+                <div className="mt-[1vh]">
+                  <p className="text-lg font-bold"><PictureAsPdfIcon /> Multi-Format Resume Output</p>
+                  <p className="text-base">Output LaTeX, Word, or PDF, ready for direct use or custom modifications.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="bg-base-300">
+        <h1 className="text-2xl font-bold pt-[2vh]">
+          FAQ
+        </h1>
+        <div className="join join-vertical w-[40vw] bg-base-200 mt-[2vh] mb-[2vh]">
+          <div className="collapse collapse-arrow join-item border border-base-300">
+            <input type="radio" name="my-accordion-4" />
+            <div className="collapse-title text-lg font-medium">
+              Do you offer a free plan?
+            </div>
+            <div className="collapse-content flex justify-center">
+              <p className="w-5/6">Yes, we are delighted to offer a free plan to our users, reflecting our commitment to accessibility and our belief in the value of our service. Our free plan includes the ability to generate up to <b>5 resumes</b> and ask <b>10 interview questions</b> per day.</p>
+            </div>
+          </div>
+
+          <div className="collapse collapse-arrow join-item border border-base-300">
+            <input type="radio" name="my-accordion-4" />
+            <div className="collapse-title text-lg font-medium">
+              How can I create a resume using your tools?
+            </div>
+            <div className="collapse-content flex justify-center">
+              <p className="w-5/6">Simply fill in your details once in Profile, and our platform will allow you to auto-generate tailored resumes for any job application. This saves you the time and effort of redoing your resume for each new application.</p>
+            </div>
+          </div>
+
+          <div className="collapse collapse-arrow join-item border border-base-300">
+            <input type="radio" name="my-accordion-4" />
+            <div className="collapse-title text-lg font-medium">
+              How does the AI-Powered Resume Creation work?
+            </div>
+            <div className="collapse-content flex justify-center">
+              <p className="w-5/6">Our AI-Powered Resume Creation tool utilizes artificial intelligence and specially tailored prompts to generate professional resumes. Everything is designed following best practices, leveraging the latest AI technology to ensure the creation of exceptional resumes. This process highlights your achievements and skills in a way that resonates with employers, making your resume stand out from other candidates.</p>
+            </div>
+          </div>
+
+          <div className="collapse collapse-arrow join-item border border-base-300">
+            <input type="radio" name="my-accordion-4" />
+            <div className="collapse-title text-lg font-medium">
+              Can I practice for interviews using your platform?
+            </div>
+            <div className="collapse-content flex justify-center">
+              <p className="w-5/6">Absolutely! Our Interview tool allows you to test yourself with interview questions based on your resume. It provides AI-generated answers to help you prepare effectively, improving your confidence and performance in real interviews.</p>
+            </div>
+          </div>
+
+          <div className="collapse collapse-arrow join-item border border-base-300">
+            <input type="radio" name="my-accordion-4" />
+            <div className="collapse-title text-lg font-medium">
+              What resume formats can I create on your website?
+            </div>
+            <div className="collapse-content flex justify-center">
+              <p className="w-5/6">You can create resumes in versatile formats including LaTeX, Word, or PDF. This flexibility allows you to choose the format that best suits your needs, whether you&apos;re looking for direct use or wish to make custom tweaks.</p>
+            </div>
+          </div>
+
+          <div className="collapse collapse-arrow join-item border border-base-300">
+            <input type="radio" name="my-accordion-4" />
+            <div className="collapse-title text-lg font-medium">
+              How can I customize the format of my resume?
+            </div>
+            <div className="collapse-content flex justify-center">
+              <p className="w-5/6">After creating your resume with our AI-Powered Resume Creation tool, you can choose to download it in LaTeX, Word, or PDF format. Each format is ready for direct use, but you can also make custom tweaks to ensure your resume perfectly meets your preferences and the application requirements.</p>
+            </div>
+          </div>
+
+          <div className="collapse collapse-arrow join-item border border-base-300">
+            <input type="radio" name="my-accordion-4" />
+            <div className="collapse-title text-lg font-medium">
+              Can I access resumes I&apos;ve generated in the past?
+            </div>
+            <div className="collapse-content flex justify-center">
+              <p className="w-5/6">Yes! We save the 10 most recent resumes created by each user. These resumes are not only stored for your convenience but are also integrated into our Interview feature. This means you can easily use any of your recent resumes to ask questions in the Interview function.</p>
+            </div>
+          </div>
+
+          <div className="collapse collapse-arrow join-item border border-base-300">
+            <input type="radio" name="my-accordion-4" />
+            <div className="collapse-title text-lg font-medium">
+              Why don&apos;t we offer a variety of templates?
+            </div>
+            <div className="collapse-content flex justify-center">
+              <p className="w-5/6">Including photos, using multiple colors, or opting for complex layouts can detract from what truly matters: the content of your resume. Our approach is informed by an analysis of resumes from some of the employees at FAANG companies. The simplicity of tech resume ensures that the resume is easily navigable, also by Applicant Tracking Systems (ATS) which are commonly used in the hiring process.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Footbar />
     </main>
   );
 }
